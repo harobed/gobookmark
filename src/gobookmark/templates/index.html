@@ -1,0 +1,54 @@
+{{ template "layout" . }}
+{{ define "content" }}
+  <div class="row">
+    <div class="col-sm-12" style="text-align: right">
+      {{ .TotalLinks }} links
+    </div>
+    <div class="col-sm-12">
+
+      {{ if gt .Page.TotalPages 1 }}
+      <div style="text-align: center">
+        {{ template "paginate" .Page }}
+      </div>
+      {{ end }}
+
+    </div>
+    <div class="col-sm-12 items_per_page" style="text-align: right">
+      Links per page :
+      <a {{ if eq .ItemsByPage 25 }}class="active"{{ end }} href="{{ per_page_url 25 }}">25</a> |
+      <a {{ if eq .ItemsByPage 50 }}class="active"{{ end }} href="{{ per_page_url 50 }}">50</a> |
+      <a {{ if eq .ItemsByPage 100 }}class="active"{{ end }} href="{{ per_page_url 100 }}">100</a>
+    </div>
+    <div class="col-sm-12">
+
+      <ul class="links">
+        {{ range $row := .Bms }}
+        <li>
+          <a class="link-title" href="{{ $row.Url }}">{{ $row.Title }}</a>
+          <div class="line2">
+            <span class="link-createdate">{{ $row.CreateDate }}</span>
+            -
+            <a class="link-url" href="{{ $row.Url }}">{{ $row.Url }}</a>
+            {{ if getContextBool "login" }}
+              <a href="{{ $row.Id }}/delete/" title="Delete"><i class="fa fa-trash"></i></a>
+              <a href="{{ $row.Id }}/edit/" title="Edit"><i class="fa fa-pencil"></i></a>
+            {{ end }}
+          </div>
+          <ul class="tags">
+          {{ range $tag := $row.Tags }}
+            <li><a href="/?search=[{{ $tag.Slug }}]">{{ $tag.Title }}</a></li>
+          {{ end }}
+          </ul>
+        </li>
+        {{ end }}
+      </ul>
+
+      {{ if gt .Page.TotalPages 1 }}
+      <div style="text-align: center">
+        {{ template "paginate" .Page }}
+      </div>
+      {{ end }}
+
+    </div>
+  </div>
+{{ end }}

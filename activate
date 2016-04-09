@@ -1,0 +1,4 @@
+export GOPATH=`pwd`
+export GOBIN=`pwd`/bin
+export PATH=`pwd`/bin:$PATH
+export GO15VENDOREXPERIMENT=1

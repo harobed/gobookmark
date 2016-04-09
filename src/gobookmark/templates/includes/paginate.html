@@ -1,0 +1,28 @@
+{{ define "paginate" }}
+<nav>
+  <ul class="pagination">
+    {{ if .HasPrevious}}
+      <li>
+        <a href="{{paginate_url .Previous}}" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+    {{end}}
+
+    {{range .Pages}}
+        {{if eq .Num -1}}
+        <li><a>...</a></li>
+        {{else}}
+        <li {{if .IsCurrent}}class="active"{{end}}><a href="{{paginate_url .Num}}">{{.Num}}</a></li>
+        {{end}}
+    {{end}}
+    {{if .HasNext}}
+      <li>
+        <a href="{{paginate_url .Next}}" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    {{end}}
+  </ul>
+</nav>
+{{ end }}

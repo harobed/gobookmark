@@ -1,0 +1,17 @@
+version: '2'
+services:
+  gobookmark:
+    container_name: gobookmark
+    build: .
+    restart: always
+    volumes:
+      - gobookmark-db-volume:/data/
+      - ./imports:/imports/
+    ports:
+      - "8000:8000"
+    environment:
+      - GOBOOKMARK_PASSWORD=password
+
+volumes:
+  gobookmark-db-volume:
+    driver: local

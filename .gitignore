@@ -1,0 +1,16 @@
+/bin/
+/pkg/
+vendor/
+*.db
+bindata.go
+src/github.com/
+src/gopkg.in/
+src/9fans.net/
+src/golang.org/
+gobookmark.index/
+gobookmark-test.index/
+src/gobookmark/gobookmark
+imports/
+.tags
+.tags1
+releases/

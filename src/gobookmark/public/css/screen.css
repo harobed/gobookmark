@@ -1,0 +1,99 @@
+.links {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.links .link-title {
+  color: black;
+  /*font-weight: bold;*/
+  font-size: 1.2em;
+}
+
+.links > LI {
+  line-height: 1.5em;
+  padding: 15px 15px;
+  border-bottom: 1px solid #aaa;
+  background: transparent linear-gradient(#F2F2F2, #FFF) repeat scroll 0% 0%;
+}
+
+.links > LI .line2 {
+  font-size: 0.8em;
+}
+
+.bootstrap-tagsinput {
+    width: 100%;
+}
+
+.tags {
+  list-style: none;
+  padding: 0;
+}
+
+.tags > LI {
+  display: inline;
+}
+
+.tags > LI:after {
+  content: ","
+}
+
+.tags > LI:last-child:after {
+  content: ""
+}
+
+.navbar-default {
+  background-color: #345;
+  background-image: none;
+  border: 0;
+  border-bottom: 1px solid #234;
+  border-radius: 0;
+}
+
+.navbar-default .navbar-brand {
+  color: #ddd;
+  text-shadow: 0 1px 1px #444;
+  border-right: 1px solid #234;
+  outline: 1px solid #456;
+}
+
+.navbar-login {
+  color: #ddd;
+  text-shadow: 0 1px 1px #444;
+  border-left: 1px solid #234;
+  outline: 1px solid #456;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #fff;
+  text-shadow: 0 1px 1px #444;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #ddd;
+  text-shadow: 0 1px 1px #444;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #fff;
+  text-shadow: 0 1px 1px #444;
+}
+
+.items_per_page A.active {
+  color: black;
+  font-weight: bold;
+}
+
+.navbar-form {
+  padding: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+FOOTER {
+  border-top: 1px solid #d6d6d6;
+  background-color: #eee;
+  text-align: center;
+  padding: 10px;
+  font-size: small;
+}

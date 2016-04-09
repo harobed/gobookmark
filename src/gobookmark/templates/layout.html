@@ -1,0 +1,80 @@
+{{ define "layout" }}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>GoBookmark</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/css/bootstrap-tagsinput.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <script src="//code.jquery.com/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/bootstrap-tagsinput.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/main.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid" style="display: flex; flex-direction: row">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">GoBookmark</a>
+          </div>
+
+          <div class="collapse" style="display: flex; flex: auto;">
+            {{ if getContextBool "index_page" }}
+              <form class="navbar-form" method="GET" action="/" style="display: flex; flex: auto;float: none; margin-right: 0">
+                <div class="input-group" style="display: flex; flex: auto">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="search"
+                    id="search-field"
+                    style="flex: auto"
+                    placeholder="Search"
+                    value="{{ .Search }}"
+                    />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">Search</button>
+                  </span>
+                </div><!-- /input-group -->
+              </form>
+              {{ if getContextBool "login" }}
+              <form class="navbar-form navbar-left">
+                <a class="btn btn-default" href="add/"><i class="fa fa-plus"></i> Add link</a>
+              </form>
+              {{ end }}
+              {{ else }}
+              <form class="navbar-form" method="GET" action="/" style="display: flex; flex: auto;float: none; margin-right: 0">
+                <div class="input-group" style="display: flex; flex: auto">
+                </div>
+              </form>
+            {{ end }}
+            <ul class="nav navbar-nav navbar-right navbar-login">
+              <li>
+                {{ if getContextBool "login" }}
+                  <a href="/logout/">Logout</a>
+                {{ else }}
+                  <a href="/login/">Login</a>
+                {{ end }}
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+    <div class="container-fluid">
+      <article>
+        {{ template "content" . }}
+      </article>
+    </div>
+    <footer>
+      Gobookmark 0.1.0 · Created by <a href="https://twitter.com/klein_stephane">Stéphane Klein</a> ·
+      <a href="https://github.com/harobed/gobookmark">GitHub Project</a> ·
+      <a href="https://github.com/harobed/gobookmark/issues">Issues</a>
+    </footer>
+  </body>
+</html>
+{{ end }}
