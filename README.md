@@ -1,5 +1,7 @@
 # Gobookmark
 
+[![Join the chat at https://gitter.im/harobed/gobookmark](https://badges.gitter.im/harobed/gobookmark.svg)](https://gitter.im/harobed/gobookmark?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Inspired by [Shaarli](https://github.com/sebsauvage/Shaarli) (Delicious clone), easier to install (only one standalone executable).
 
 Built with Go - GoBookmark runs without installation on multiple platforms.
