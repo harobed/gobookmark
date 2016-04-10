@@ -4,6 +4,9 @@ Inspired by [Shaarli](https://github.com/sebsauvage/Shaarli) (Delicious clone), 
 
 Built with Go - GoBookmark runs without installation on multiple platforms.
 
+[![Docker repository](https://img.shields.io/docker/pulls/harobed/gobookmark.svg)](https://hub.docker.com/r/harobed/gobookmark/)
+[![Join the chat at https://gitter.im/harobed/gobookmark](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/harobed/gobookmark)
+
 
 ## Overview
 
